@@ -8,8 +8,8 @@ import "./App.css"; // Global Styling
 import logo from "./media/logo.jpg"; // Innovation Team Logo
 // Pages import for <Link></Link> to work
 import DAOProposal from "./pages/DAOProposal";
-import Link2 from "./pages/Link2";
-import PayPremium from "./pages/PayPremium";
+import BuyPolicy from "./pages/BuyPolicy";
+import YourPolicies from "./pages/YourPolicies";
 import Link4 from "./pages/Link4";
 import Link5 from "./pages/Link5";
 import Home from "./pages/Home";
@@ -189,13 +189,13 @@ function App() {
                                 </div>
                                 <ul className="dropdown-menu bg-dark">
                                     <li>
-                                        <Link className="nav-link font-gold-big text-nowrap" to="/payPremium">
-                                            Pay Premium
+                                        <Link className="nav-link font-gold-big text-nowrap" to="/YourPolicies">
+                                            Your Policies
                                         </Link>
                                     </li>
                                     <li>
-                                        <Link className="nav-link font-gold-big text-nowrap" to="/submitClaim">
-                                            Submit Claim
+                                        <Link className="nav-link font-gold-big text-nowrap" to="/BuyPolicy">
+                                            Buy New Policy
                                         </Link>
                                     </li>
                                 </ul>
@@ -321,16 +321,16 @@ function App() {
                     </div>
                 )}
             </div>
-            <div class="container">
+            <div className="container">
                 <Routes>
                     {/* Home route */}
                     <Route path="/" element={<Home />} />
 
                     {/* Link 1 route */}
-                    <Route path="/payPremium" element={<PayPremium />} />
+                    <Route path="/YourPolicies" element={<YourPolicies />} />
 
                     {/* Link 2 route */}
-                    <Route path="/submitClaim" element={<Link2 />} />
+                    <Route path="/BuyPolicy" element={<BuyPolicy />} />
 
                     {/* Link 3 route */}
                     <Route path="/DAOProposal" element={<DAOProposal />} />

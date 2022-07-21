@@ -14,7 +14,7 @@ import axios from "axios";
 /* ENVIRONMENT VARIABLES (EXPOSED)
  */
 const apiKey = "O2R9-YptcrXeygM_lYXcmBcnQvlxnUtB"; // Alchemy API Key
-const governorContractAddress = "0x53F2A31357d8D0FE1572c4Bfef95acf76357f717"; // Governor Contract Address
+const governorContractAddress = "0xbB4b75137079F20BA8d9991c77F8B09A4BAFbf95"; // Governor Contract Address
 const nftMinterContractAddress = "0x3F14CC30ED2f2c7f35f4172aEa4fb98A3ab52D1A"; // NFT Minter Contract Address
 const MINUTE_MS = 100000; // Pull new data Timing (ms)
 const API_URL = "https://rinkeby-faucet-phillip.herokuapp.com/"; // Heroku faucet backend
@@ -387,9 +387,6 @@ export default function DAOProposal() {
                                         <button type="button" className="btn btn-primary btn-lg font-alert" data-tag={count - 1} onClick={voteInGovernor}>
                                             {voteFlag ? "Please Wait..." : "Vote"}
                                         </button>
-                                        <button type="button" className={`ms-2 btn btn-success btn-lg font-alert" + ${voteTxId ? "" : " disabled"}`} onClick={claimNFT}>
-                                            {claimFlag ? "Please Wait..." : "Collect NFT!"}
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -577,15 +574,9 @@ export default function DAOProposal() {
     return (
         <React.Fragment>
             <div className="container d-flex flex-column align-items-center">
-                {/* Alert telling people about free NFT  */}
-                <div className={"alert alert-success alert-dismissible fade show"} role="alert">
-                    <div>
-                        <strong>Vote in any proposal now for an exclusive NFT! </strong>
-                    </div>
-                    <button type="button" className="btn-close" data-bs-dismiss="alert"></button>
-                </div>
+
                 <h1 className="mt-5">
-                    Active Proposal List
+                    Active Insurance DAO Proposal List
                     <button type="button" className="ms-5 btn btn-success btn-lg font-alert" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         Create a new Proposal
                     </button>
@@ -595,7 +586,7 @@ export default function DAOProposal() {
                 <div className="accordion mt-5 w-100" id="accordionActive">
                     {displayActiveProposal()}
                 </div>
-                <h1 className="mt-5">Expired Proposal List</h1>
+                <h1 className="mt-5">Expired Insurance DAO Proposal List</h1>
                 {/* Accordion containing a list of proposals */}
                 <div className={activeProposalList.length ? "d-none" : "h1 font-gold-big"}>Loading...</div>
                 <div className="accordion mt-5 w-100" id="accordionExample">

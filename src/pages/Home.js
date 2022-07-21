@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useGlobalContext } from "../contexts/globalProvider";
 import carousel0 from "../media/logo.jpg";
 import carousel1 from "../media/carousel1.jpg";
+import carousel2 from "../media/carousel2.jpg"
 
 // // Environment Variables
 
@@ -17,10 +18,11 @@ export default function Home() {
 
     return (
         <React.Fragment>
-            <div id="carouselExampleIndicators" className="carousel slide border border-5" data-bs-ride="true">
+            <div id="carouselExampleIndicators" className="carousel slide border border-5" data-bs-ride="true" data-bs-interval="100000">
                 <div className="carousel-indicators">
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active"></button>
                     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></button>
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
@@ -28,6 +30,9 @@ export default function Home() {
                     </div>
                     <div className="carousel-item">
                         <img className="me-3" src={carousel1} alt="Logo" style={{ width: "100%" }} />
+                    </div>
+                    <div className="carousel-item">
+                        <img className="me-3" src={carousel2} alt="Logo" style={{ width: "100%" }} />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

@@ -7,8 +7,11 @@ import React, { useEffect } from "react";
 import "./App.css"; // Global Styling
 import logo from "./media/logo.jpg"; // Innovation Team Logo
 // Pages import for <Link></Link> to work
-import Link1 from "./pages/Link1";
+import DAOProposal from "./pages/DAOProposal";
 import Link2 from "./pages/Link2";
+import PayPremium from "./pages/PayPremium";
+import Link4 from "./pages/Link4";
+import Link5 from "./pages/Link5";
 import Home from "./pages/Home";
 import FAQ from "./pages/FAQ";
 // Contexts Import
@@ -167,7 +170,7 @@ function App() {
             <nav className="navbar navbar-expand-lg bg-dark mb-3">
                 <div className="container-fluid">
                     {/* Logo  */}
-                    <img className="me-3" src={logo} alt="Logo" style={{ width: "25vh" }} />
+                    <img className="me-3" src={logo} alt="Logo" style={{ width: "35vh" }} />
                     {/* Dropdown Button  */}
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                         <span className="navbar-toggler-icon"></span>
@@ -180,15 +183,51 @@ function App() {
                                     Home
                                 </Link>
                             </li>
-                            <li className="nav-item pe-2 text-center">
-                                <Link className="nav-link font-gold-big text-nowrap" to="/Link1">
-                                    Link 1
-                                </Link>
+                            <li className="nav-item dropdown pe-2 text-center">
+                                <div className="nav-link dropdown-toggle font-gold-big text-nowrap" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                    Customer
+                                </div>
+                                <ul className="dropdown-menu bg-dark">
+                                    <li>
+                                        <Link className="nav-link font-gold-big text-nowrap" to="/payPremium">
+                                            Pay Premium
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="nav-link font-gold-big text-nowrap" to="/submitClaim">
+                                            Submit Claim
+                                        </Link>
+                                    </li>
+                                </ul>
                             </li>
-                            <li className="nav-item pe-2 text-center">
-                                <Link className="nav-link font-gold-big text-nowrap" to="/Link2">
-                                    Link 2
-                                </Link>
+                            <li className="nav-item dropdown pe-2 text-center">
+                                <div className="nav-link dropdown-toggle font-gold-big text-nowrap" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                    DAO
+                                </div>
+                                <ul className="dropdown-menu bg-dark">
+                                    <li>
+                                        <Link className="nav-link font-gold-big text-nowrap" to="/DAOProposal">
+                                            Proposals
+                                        </Link>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li className="nav-item dropdown pe-2 text-center">
+                                <div className="nav-link dropdown-toggle font-gold-big text-nowrap" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                                    Admin
+                                </div>
+                                <ul className="dropdown-menu bg-dark">
+                                    <li>
+                                        <Link className="nav-link font-gold-big text-nowrap" to="/damageAssessment">
+                                            Damage Assessment
+                                        </Link>
+                                    </li>
+                                    <li>
+                                        <Link className="nav-link font-gold-big text-nowrap" to="/claimsAssessment">
+                                            Claims Assessment
+                                        </Link>
+                                    </li>
+                                </ul>
                             </li>
                             <li className="nav-item pe-2 text-center">
                                 <Link className="nav-link font-gold-big text-nowrap" to="/FAQ">
@@ -282,41 +321,30 @@ function App() {
                     </div>
                 )}
             </div>
-            {/* Informational Modal  */}
-            <div className="modal fade" id="home" tabIndex="-1">
-                <div className="modal-dialog">
-                    <div className="modal-content">
-                        <div className="modal-header">
-                            <h5 className="modal-title" id="exampleModalLabel">
-                                Modal title
-                            </h5>
-                            <button type="button" className="btn-close" data-bs-dismiss="modal"></button>
-                        </div>
-                        <div className="modal-body">...</div>
-                        <div className="modal-footer">
-                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">
-                                Close
-                            </button>
-                            <button type="button" className="btn btn-primary">
-                                Save changes
-                            </button>
-                        </div>
-                    </div>
-                </div>
+            <div class="container">
+                <Routes>
+                    {/* Home route */}
+                    <Route path="/" element={<Home />} />
+
+                    {/* Link 1 route */}
+                    <Route path="/payPremium" element={<PayPremium />} />
+
+                    {/* Link 2 route */}
+                    <Route path="/submitClaim" element={<Link2 />} />
+
+                    {/* Link 3 route */}
+                    <Route path="/DAOProposal" element={<DAOProposal />} />
+
+                    {/* Link 4 route */}
+                    <Route path="/damageAssessment" element={<Link4 />} />
+
+                    {/* Link 5 route */}
+                    <Route path="/claimsAssessment" element={<Link5 />} />
+
+                    {/* FAQ route */}
+                    <Route path="/FAQ" element={<FAQ />} />
+                </Routes>
             </div>
-            <Routes>
-                {/* Home route */}
-                <Route path="/" element={<Home />} />
-
-                {/* Link 1 route */}
-                <Route path="/Link1" element={<Link1 />} />
-
-                {/* Link 2 route */}
-                <Route path="/Link2" element={<Link2 />} />
-
-                {/* FAQ route */}
-                <Route path="/FAQ" element={<FAQ />} />
-            </Routes>
         </Router>
     );
 }
